@@ -1,4 +1,4 @@
-# Port Killer 🔥
+# Process Killer 💀
 
 A beautiful and intuitive web application for monitoring and managing development ports. Perfect for developers who work with multiple services and need a quick way to see what's running where and kill processes when needed.
 
@@ -9,34 +9,61 @@ A beautiful and intuitive web application for monitoring and managing developmen
 - 🔄 **Auto-Refresh** - Optional automatic refreshing every 5 seconds
 - 📊 **Port Statistics** - See total, active, and available ports at a glance
 - 🎨 **Beautiful UI** - Modern, responsive design that works on all devices
-- ⚡ **Fast & Lightweight** - Built with vanilla JavaScript and Express.js
+- ⚡ **Fast & Lightweight** - Built with React 18, Vite, and Express.js
+- 🎯 **Toast Notifications** - Modern toast notifications for all actions
+- 💀 **Skull Animation** - Satisfying skull animation on successful kills
+- 🔍 **Smart Tooltips** - Hover to see full process names that are truncated
 
 ## Quick Start
+
+### Production Mode
 
 1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. **Start the server:**
+2. **Build the React app:**
    ```bash
-   npm start
+   npm run build
    ```
 
-3. **Open your browser:**
+3. **Start the server:**
+   ```bash
+   npm run server
+   ```
+
+4. **Open your browser:**
    Navigate to `http://localhost:8080`
 
 ## Development
 
-For development with auto-restart:
-```bash
-npm run dev
-```
+For development with hot reload:
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the API server** (in one terminal):
+   ```bash
+   npm run server:dev
+   ```
+
+3. **Start the Vite dev server** (in another terminal):
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:3000` (or the port Vite assigns)
 
 ## Monitored Ports
 
 The application monitors these commonly used development ports:
 - **3000-3005** - React, Vue, Angular, Next.js development servers
+- **5173-5175** - Vite development servers
+- **8080** - Common application server port
 - **9000-9005** - Various development tools and services
 
 ## How It Works
@@ -78,9 +105,9 @@ Kills a process by PID:
 
 ## Safety Features
 
-- **Confirmation Dialog**: Asks for confirmation before killing processes
-- **Error Handling**: Graceful error handling with user-friendly messages
+- **Error Handling**: Graceful error handling with user-friendly toast notifications
 - **Process Validation**: Only kills processes that are actually running
+- **Visual Feedback**: Button state changes and animations confirm successful actions
 
 ## Browser Support
 
@@ -112,8 +139,9 @@ Some processes may require elevated permissions. Run the application with approp
 ### Ports not showing up
 Make sure you have `lsof` installed on your system (it comes pre-installed on macOS and most Linux distributions).
 
-## Acknowledgments
+## Tech Stack
 
-- Built with Express.js for the backend
-- Uses vanilla JavaScript for maximum performance
-- Styled with modern CSS gradients and animations# port-killer git add README.md
+- **Frontend**: React 18 with Vite for blazing fast hot module replacement
+- **Backend**: Express.js API server with ES modules
+- **UI Library**: react-hot-toast for elegant notifications
+- **Styling**: Modern CSS with gradients, animations, and dark theme
