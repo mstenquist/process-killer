@@ -1,0 +1,28 @@
+{
+  "name": "process-killer",
+  "version": "1.0.0",
+  "description": "A web app to monitor and kill processes on development ports",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server.js",
+    "server:dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "nodemon": "^3.0.1",
+    "vite": "^5.0.8"
+  },
+  "keywords": ["port", "monitor", "kill", "development", "process"],
+  "author": "",
+  "license": "MIT"
+}
