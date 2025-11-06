@@ -23,10 +23,11 @@ function checkPort(port) {
       if (error) {
         resolve({ port, inUse: false, pid: null, process: null });
       } else {
-        const pid = stdout.trim();
+        const pids = stdout.trim().split('\n');
+        const pid = pids[0]; // Take first PID if multiple
         if (pid) {
-          // Get process name
-          exec(`ps -p ${pid} -o comm=`, (err, processName) => {
+          // Get process name without header
+          exec(`ps -p ${pid} -o comm= 2>/dev/null`, (err, processName) => {
             resolve({
               port,
               inUse: true,
